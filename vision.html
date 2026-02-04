@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long-Term Vision - LOKA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+
+body{
+  background:#050808;
+  color:#e8fff5;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:#050808;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  z-index:9999;
+}
+
+.nav-left a{
+  color:#00ffd5;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+.nav-right a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  transition:0.3s;
+}
+.nav-right a:hover{
+  color:#00ffd5;
+}
+
+/* HEADER */
+.header{
+  padding-top:140px;
+  text-align:center;
+}
+
+.header h1{
+  font-size:3rem;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.header p{
+  margin-top:15px;
+  opacity:0.9;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
+
+/* fade animation */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* VISION GRID */
+.vision-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.vision-grid img{
+  width:100%;
+  border-radius:20px;
+  filter:drop-shadow(0 0 30px #00ffd555);
+}
+
+/* VISION TEXT */
+.vision-text h2{
+  font-size:2rem;
+  margin-bottom:15px;
+}
+.vision-text p{
+  line-height:1.7;
+  opacity:0.9;
+  margin-bottom:15px;
+}
+
+/* PILLARS */
+.pillars{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:60px;
+}
+
+.pillar-card{
+  background:linear-gradient(180deg,#021f1a,#010b09);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:
+    0 0 25px rgba(0,255,200,0.25),
+    inset 0 0 15px rgba(0,255,200,0.1);
+  transition:0.3s;
+  text-align:center;
+}
+
+.pillar-card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 0 40px rgba(0,255,200,0.5),
+    inset 0 0 25px rgba(0,255,200,0.2);
+}
+
+.pillar-card h3{
+  margin-bottom:10px;
+  font-size:1.2rem;
+}
+
+.pillar-card p{
+  font-size:0.95rem;
+  opacity:0.85;
+}
+
+/* FOOTER */
+footer{
+  background:#020505;
+  padding:40px;
+  text-align:center;
+  opacity:0.7;
+  margin-top:80px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header h1{font-size:2.2rem;}
+  section{padding:60px 6%;}
+  .vision-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <a href="index.html">← Back to Home</a>
+  </div>
+  <div class="nav-right">
+    <a href="wallet.html">Wallet</a>
+    <a href="community.html">Community</a>
+  </div>
+</header>
+
+<div class="header">
+  <h1>📈 Long-Term Vision</h1>
+  <p>
+    💎lokatrend(LOKA) hadir bukan hanya sebagai Token, tetapi sebagai gerakan komunitas yang berfokus pada transparasi publik dan mencoba merubah pandangan tentang dunia crypto,yang penuh dengan spekulasi, Menjadi tempat yang aman bagi semua💎
+  </p>
+</div>
+
+<section class="fade">
+  <div class="vision-grid">
+
+    <div class="vision-text">
+      <h2>🌍 VISI</h2>
+      <p>
+        Lokatrend (LOKA) bertujuan membangun ekosistem token komunitas yang transparan, terukur, dan bertanggung jawab, sebagai alternatif terhadap praktik aset kripto yang berisiko dan tidak akuntabel yang marak terjadi khusus nya di Indonesia.
+Proyek ini dirancang sebagai sarana utilitas dan partisipasi komunitas berbasis Web3, bukan sebagai instrumen investasi, dengan menekankan keterbukaan informasi, verifikasi on-chain, serta pembentukan kepercayaan publik melalui mekanisme yang dapat diaudit secara mandiri.
+      </p>
+
+      <h2>🎯 MISI</h2>
+      <p>
+        • Mengedepankan Edukasi dan Fungsi Utilitas<br>
+        • Membangun Kepercayaan pada dunia crypto<br>
+        • Menerapkan Mekanisme Ekonomi yang Jelas dan Terdokumentasi<br>
+        • Menjaga Konsistensi dan Kepastian Struktur Token<br>
+        • Mendorong Pertumbuhan Komunitas yang Bertanggung Jawab dan menjaga nilai.
+      </p>
+    </div>
+
+    <img src="maskot3.png" alt="Vision Image">
+
+  </div>
+</section>
+
+<section class="fade">
+  <h2 style="text-align:center;">🚀 Vision Pillars</h2>
+
+  <div class="pillars">
+
+    <div class="pillar-card">
+      <h3>🔐 Transparency</h3>
+      <p>
+        Semua aktivitas wallet dan laporan project dapat diakses publik oleh komunitas.
+      </p>
+    </div>
+
+    <div class="pillar-card">
+      <h3>🤝 Community Driven</h3>
+      <p>
+        Keputusan dan pengembangan project berbasis partisipasi komunitas.
+      </p>
+    </div>
+
+    <div class="pillar-card">
+      <h3>📈 Sustainability</h3>
+      <p>
+        Model ekonomi token yang mendukung pertumbuhan jangka panjang.
+      </p>
+    </div>
+
+    <div class="pillar-card">
+      <h3>🌐 Global Impact</h3>
+      <p>
+        Membangun jaringan komunitas crypto lintas negara dengan nilai sosial.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 LOKA Coin • Long-Term Vision • All Rights Reserved
+</footer>
+
+<script>
+// fade animation
+const fades=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  fades.forEach(el=>{
+    const pos=el.getBoundingClientRect().top;
+    if(pos<window.innerHeight-100){
+      el.classList.add('show');
+    }
+  })
+});
+</script>
+
+</body>
+</html>

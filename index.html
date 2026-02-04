@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOKA Coin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:#050808;
+  color:#e8fff5;
+  overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:#050808;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  z-index:9999;
+}
+
+.nav-left img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  box-shadow:0 0 15px #00ffd5;
+}
+
+.nav-right{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.nav-pill{
+  padding:10px 22px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  color:black;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 15px #00ffd5;
+  transition:0.3s;
+}
+
+.nav-pill:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 30px #00ffd5;
+}
+
+.nav-icon{
+  color:white;
+  font-size:22px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nav-icon:hover{
+  color:#00ffd5;
+  filter:drop-shadow(0 0 10px #00ffd5);
+}
+
+.nav-line{
+  position:fixed;
+  top:70px;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  z-index:9998;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  padding-top:120px;
+  background:radial-gradient(circle at top,#00ffd533,#050808 70%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero h1{
+  font-size:4rem;
+  font-weight:800;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin-top:15px;
+  font-size:1.2rem;
+  opacity:0.9;
+}
+
+.subtitle{
+  display:inline-block;
+  font-size:1rem;
+  margin-top:10px;
+  color:#cafff2;
+  opacity:0.9;
+  position:relative;
+  padding-bottom:8px;
+}
+
+.subtitle::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:120px;
+  height:2px;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  box-shadow:0 0 10px #00ffd5;
+  border-radius:2px;
+}
+
+.hero-image{
+  width:260px;
+  margin-top:30px;
+  filter: drop-shadow(0 0 30px rgba(0,255,200,0.6));
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
+}
+
+.cta-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
+.btn{
+  padding:15px 30px;
+  border-radius:30px;
+  border:none;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 20px #00ffd566;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 40px #00ffd5;
+}
+
+.token-box{
+  margin-top:50px;
+  padding:20px 30px;
+  background:#0a1a17;
+  border-radius:20px;
+  box-shadow:0 0 20px #00ffd533;
+}
+
+/* particles */
+.particle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#00ffd5;
+  border-radius:50%;
+  opacity:0.4;
+  animation:float 8s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-40px);}
+  100%{transform:translateY(0);}
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:100px 10%;
+  position:relative;
+}
+
+/* fade animation */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ABOUT */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+.about img{
+  width:100%;
+  border-radius:20px;
+  filter:drop-shadow(0 0 30px #00ffd555);
+}
+
+/* TOKENOMICS */
+.tokenomics{text-align:center;}
+#tokenChart{
+  margin:30px auto;
+  display:block;
+}
+
+/* FEATURES */
+.features{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  align-items:center;
+}
+
+.feature-box{
+  width:100%;
+  max-width:600px;
+  padding:30px 50px;
+  border-radius:30px;
+  background:linear-gradient(180deg,#021f1a,#010b09);
+  box-shadow:
+    0 0 30px rgba(0,255,200,0.25),
+    inset 0 0 20px rgba(0,255,200,0.1);
+  text-align:center;
+  font-size:1.4rem;
+  font-weight:600;
+  color:#ffffff;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.feature-box:hover{
+  transform:translateY(-5px);
+  box-shadow:
+    0 0 45px rgba(0,255,200,0.5),
+    inset 0 0 25px rgba(0,255,200,0.2);
+  color:#00ffd5;
+}
+
+/* ROADMAP */
+.roadmap ul{
+  list-style:none;
+  border-left:2px solid #00ffd5;
+  padding-left:30px;
+}
+.roadmap li{
+  margin-bottom:30px;
+  position:relative;
+}
+.roadmap li::before{
+  content:'';
+  position:absolute;
+  left:-10px;
+  top:5px;
+  width:15px;
+  height:15px;
+  background:#00ffd5;
+  border-radius:50%;
+}
+
+/* COMMUNITY */
+.community{text-align:center;}
+.socials img{
+  width:50px;
+  margin:20px;
+  transition:0.3s;
+}
+.socials img:hover{
+  transform:scale(1.2);
+  filter:drop-shadow(0 0 15px #00ffd5);
+}
+
+/* FOOTER */
+footer{
+  background:#020505;
+  padding:40px;
+  text-align:center;
+  opacity:0.7;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:2.5rem;}
+  .about{grid-template-columns:1fr;}
+  .navbar{padding:0 20px;}
+}..nav-social{
+  width:24px;
+  height:24px;
+  transition:0.3s;
+  filter:drop-shadow(0 0 5px #00ffd5);
+}
+
+.nav-icon:hover .nav-social{
+  transform:scale(1.2);
+  filter:drop-shadow(0 0 12px #00ffd5);
+}
+}
+
+.nav-icon:hover img{
+  filter:brightness(1) drop-shadow(0 0 10px #00ffd5);
+}.nav-icon img{
+  width:22px;
+  transition:0.3s;
+  filter:brightness(0) invert(1);
+}
+
+.nav-icon:hover img{
+  filter:brightness(1) drop-shadow(0 0 10px #00ffd5);
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <img src="maskot1.png" alt="logo">
+  </div>
+  <div class="nav-right">
+   <a href="https://t.me/lokatrend" target="_blank" class="nav-pill">Join</a>
+ <a href="https://x.com/lokatrend?s=21" target="_blank" class="nav-icon">
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" alt="X">
+</a>
+  <a href="https://t.me/lokatrend" target="_blank" class="nav-icon">
+ <img src="https://cdn-icons-png.flaticon.com/512/2111/2111703.png">
+</a>
+  </div>
+</header>
+<div class="nav-line"></div>
+
+<section id="hero" class="hero">
+  <div>
+    <h1>LOKATREND</h1>
+    <span class="subtitle">(Token Komunitas Masa depan)</span>
+    <p>🔎Transparansi, 🎯Integritas & 🧑‍🧑‍🧒Komunitas adalah sebuah nilai yang bisa di ciptakan Bersama: </p>
+
+    <img src="gambar1.png" class="hero-image" alt="LOKA Mascot">
+
+    <div class="cta-buttons">
+      <a href="https://t.me/lokatrend" target="_blank" class="btn">Gabung Komunitas</a>
+      <a href="whitepaper.html" class="btn">Baca Whitepaper</a>
+    </div>
+
+    <div class="token-box">
+      Smart Contract:<br>
+      <strong>0x1234...abcd</strong>
+    </div>
+  </div>
+
+  <div class="particle" style="top:20%; left:10%;"></div>
+  <div class="particle" style="top:50%; left:80%;"></div>
+  <div class="particle" style="top:70%; left:30%;"></div>
+</section>
+
+<section class="about fade">
+  <div>
+    <h2>APA ITU LOKA?</h2>
+    <p>Lokatrend (LOKA) adalah token komunitas yang dibangun di jaringan Solana dan dirancang untuk
+retail serta pertumbuhan jangka panjang.
+LOKA bukan skema cepat kaya dan bukan produk investasi. Fokus utama LOKA adalah
+transparansi, keberlanjutan, dan pertumbuhan berbasis aktivitas nyata komunitas.</p>
+
+    <h2>Fun fact:</h2>
+<p>LOKA dibuat untuk jadi Token komunitas yang mengedepankan transparansi di dunia web3 terutama di crypto indonesia🇮🇩.</p>
+  </div>
+  <img src="maskot3.png">
+</section>
+
+<section class="tokenomics fade">
+  <h2>Tokenomics</h2>
+  <canvas id="tokenChart" width="260" height="260"></canvas>
+  <p>
+    60% Market & Liquidity • 
+    20% Project Operational • 
+    6% Affiliate/Incentive Pool • 
+    4% Community/Airdrop • 
+    10% Burn Reverse
+  </p>
+<h2>🔥BURN REVERSE TIDAK DI JUAL KE MARKET🔥</h2>
+<p> token ini khusus untuk di burn bertahap<p>
+</section>
+<section class="features fade">
+
+  <a href="wallet.html" class="feature-box">🔐 STRUKTUR WALLET</a>
+  <a href="vision.html" class="feature-box">📈 VISI & MISI Lokatrend(LOKA)</a>
+  <a href="community.html" class="feature-box">🤝 PROJECT KOMUNITAS</a>
+  <a href="https://t.me/laporanlokatrend" target="_blank" class="feature-box">📊 LAPORAN AKTIVITAS</a>
+
+</section>
+
+<section class="roadmap fade">
+  <h2>Roadmap</h2>
+  <ul>
+    <li><strong>  Tahap 1 – Peluncuran Token</strong><br>
+        • Deploy smart contract<br>
+        • Peluncuran website & whitepaper<br>
+        • Membentuk komunitas Telegram & X<br>
+        • Pemasaran awal secara organik
+    </li>
+
+    <li><strong>  Tahap 2 – Pertumbuhan Komunitas</strong><br>
+        • Airdrop & reward komunitas<br>
+        • Kerja sama dengan influencer kripto by<br>
+        • Peluncuran proyek komunitas
+    </li>
+
+    <li><strong> Tahap 3 – Evaluasi & Utilitas</strong><br>
+        • Laporan transparansi proyek<br>
+        • Meme sayembara development<br>
+        • NFT / ecosystem planning
+    </li>
+
+    <li><strong> Tahap 4 – Global Expansion</strong><br>
+        • International community<br>
+        • Listing campaign<br>
+        • Long-term sustainability program
+    </li>
+  </ul>
+</section>
+
+<section class="community fade">
+  <h2>Join Our Community</h2>
+  <div class="socials">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+  </div>
+</section>
+
+<footer>
+  © 2026 LOKA Coin • Disclaimer • All Rights Reserved
+</footer>
+
+<script>
+// fade on scroll
+const fades=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  fades.forEach(el=>{
+    const pos=el.getBoundingClientRect().top;
+    if(pos<window.innerHeight-100){
+      el.classList.add('show');
+    }
+  })
+});
+
+// navbar shadow
+window.addEventListener("scroll",()=>{
+  const nav=document.querySelector(".navbar");
+  if(window.scrollY>20){
+    nav.style.boxShadow="0 5px 20px #00ffd533";
+  }else{
+    nav.style.boxShadow="none";
+  }
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('tokenChart');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: [
+      'Market & Liquidity',
+      'Project Operational',
+      'Affiliate / Incentive',
+      'Community / Airdrop',
+      'Burn Reverse'
+    ],
+    datasets: [{
+      data: [60,20,6,4,10],
+      backgroundColor: [
+        '#00ffd5',
+        '#00ccaa',
+        '#009977',
+        '#007755',
+        '#004433'
+      ],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    plugins:{
+      legend:{
+        labels:{ color:'#ffffff', font:{ size:12 } }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transparent Wallet Structure - LOKA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+
+body{
+  background:#050808;
+  color:#e8fff5;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:#050808;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  z-index:9999;
+}
+
+.nav-left a{
+  color:#00ffd5;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+.nav-right a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  transition:0.3s;
+}
+.nav-right a:hover{
+  color:#00ffd5;
+}
+
+/* HEADER */
+.header{
+  padding-top:140px;
+  text-align:center;
+}
+
+.header h1{
+  font-size:3rem;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.header p{
+  margin-top:15px;
+  opacity:0.9;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
+
+/* fade animation */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* WALLET GRID */
+.wallet-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.wallet-card{
+  background:linear-gradient(180deg,#021f1a,#010b09);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:
+    0 0 25px rgba(0,255,200,0.25),
+    inset 0 0 15px rgba(0,255,200,0.1);
+  transition:0.3s;
+}
+
+.wallet-card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 0 40px rgba(0,255,200,0.5),
+    inset 0 0 25px rgba(0,255,200,0.2);
+}
+
+.wallet-card h3{
+  font-size:1.3rem;
+  margin-bottom:10px;
+}
+
+.wallet-card p{
+  font-size:0.95rem;
+  opacity:0.85;
+  margin-bottom:20px;
+}
+
+.wallet-card a{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#00ffd5,#00aa88);
+  color:black;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.wallet-card a:hover{
+  box-shadow:0 0 20px #00ffd5;
+}
+
+/* FOOTER */
+footer{
+  background:#020505;
+  padding:40px;
+  text-align:center;
+  opacity:0.7;
+  margin-top:80px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header h1{font-size:2.2rem;}
+  section{padding:60px 6%;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <a href="index.html">← Back to Home</a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html#tokenomics">Tokenomics</a>
+    <a href="index.html#community">Community</a>
+  </div>
+</header>
+
+<div class="header">
+  <h1>🔐 Transparent Wallet Structure</h1>
+  <p>Semua wallet LOKA dapat dilihat secara publik untuk menjaga transparansi & kepercayaan komunitas.</p>
+</div>
+
+<section class="fade">
+  <div class="wallet-grid">
+
+    <div class="wallet-card">
+      <h3>💧 Wallet Liquidity</h3>
+      <p>Wallet khusus untuk penyediaan likuiditas pasar dan stabilitas trading.</p>
+      <a href="https://solscan.io/account/PASTE_WALLET_ADDRESS" target="_blank">👉🏻View on Solscan</a>
+    </div>
+
+    <div class="wallet-card">
+      <h3>🚀 Wallet Deploy</h3>
+      <p>Wallet untuk proses deployment token & kontrak awal project.</p>
+      <a href="https://solscan.io/account/PASTE_WALLET_ADDRESS" target="_blank">👉🏻View on Solscan</a>
+    </div>
+
+    <div class="wallet-card">
+      <h3>🏗️ Wallet Project / Operational</h3>
+      <p>Digunakan untuk pengembangan project, server, marketing, dan kebutuhan operasional.</p>
+      <a href="https://solscan.io/account/PASTE_WALLET_ADDRESS" target="_blank">👉🏻View on Solscan</a>
+    </div>
+
+    <div class="wallet-card">
+      <h3>🤝 Wallet Affiliate Revenue</h3>
+      <p>Wallet khusus untuk sistem afiliasi & reward komunitas.</p>
+      <a href="https://solscan.io/account/PASTE_WALLET_ADDRESS" target="_blank">👉🏻View on Solscan</a>
+    </div>
+
+    <div class="wallet-card">
+      <h3>🔥 Wallet Buyback / Burn</h3>
+      <p>Digunakan untuk mekanisme buyback token & burn supply.</p>
+      <a href="https://solscan.io/account/PASTE_WALLET_ADDRESS" target="_blank">👉🏻View on Solscan</a>
+    </div>
+
+    <div class="wallet-card">
+      <h3>♻️ Wallet Burn Reverse</h3>
+      <p>Wallet khusus untuk sistem burn reverse sesuai roadmap ekonomi token.</p>
+      <a href="https://solscan.io/account/PASTE_WALLET_ADDRESS" target="_blank">👉🏻View on Solscan</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 LOKA Coin • Transparent Wallet System • All Rights Reserved
+</footer>
+
+<script>
+// fade animation
+const fades=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  fades.forEach(el=>{
+    const pos=el.getBoundingClientRect().top;
+    if(pos<window.innerHeight-100){
+      el.classList.add('show');
+    }
+  })
+});
+</script>
+
+</body>
+</html>
