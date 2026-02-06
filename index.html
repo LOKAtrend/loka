@@ -365,13 +365,12 @@ footer{
       <a href="whitepaper.html" class="btn">Baca Whitepaper</a>
     </div>
 
-    <div class="token-box">
-  Smart Contract:<br>
-  <strong id="tokenMint" class="mint-text" onclick="copyMint()">
-   waiting launching address
-  </strong>
-  <div id="copyStatus">Copied!</div>
-</div>
+     <div class="token-box">
+    Smart Contract:<br>
+    <strong id="tokenMint" class="mint-text" onclick="copyMint()">
+      Waiting launching
+    </strong>
+  </div>
 
   <div class="particle" style="top:20%; left:10%;"></div>
   <div class="particle" style="top:50%; left:80%;"></div>
@@ -515,6 +514,18 @@ new Chart(ctx, {
   }
 });
 </script>
+  <!-- SCRIPT TARUH DI SINI -->
+  <script>
+    function copyMint() {
+      const text = document.getElementById("tokenMint").innerText.trim();
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Berhasil di-copy!");
+      }).catch(err => {
+        console.error("Gagal copy:", err);
+      });
+    }
+  </script>
 
 </body>
 </html>
